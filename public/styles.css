@@ -1,0 +1,219 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+body{
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  background: linear-gradient(rgb(0, 26, 0),rgb(0, 0, 27))
+
+}
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+ul{
+  list-style-type: none;
+}
+
+
+
+a,li{
+  text-decoration: none;
+  color:peachpuff
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  
+  margin-bottom: 120px;
+  flex-direction: column;
+}
+nav ul{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+}
+nav li{
+  margin-left: 20px;
+}
+nav li a{
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8em;
+  display: block;
+  padding: 10px 16px;
+  letter-spacing: 2px;
+  color: ghostwhite;
+}
+body .stream{
+  background-color: honeydew;
+  padding: 2rem;
+  color: #17002a;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 10vh;
+  margin: 4rem;
+}
+.stream q{
+  color: gray;
+  margin: 1rem;
+  font-style: italic;
+}
+
+
+
+
+
+form h2{
+  font-size: 2.4em;
+  font-weight: 900;
+  margin-bottom: 40px;
+}
+form{
+
+  display:flex;
+  flex-direction: column;
+  color:ghostwhite;
+  padding: 1rem;
+  align-items: center;
+
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.1);
+  border-radius: 10px;
+ 
+}
+input,select{
+  border-radius:0.2rem;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  width: 100%;
+
+  margin: 1rem;
+  background-color:rgb(2, 2, 59);
+border-color: midnightblue;
+color: aliceblue;
+  
+  padding: 0.5rem;
+  
+
+
+}
+label{
+  display: block;
+  margin: 20px 0 10px;
+}
+button{
+
+  border:0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8em;
+  border-radius:0.2rem;
+  letter-spacing: 2px;
+  padding: 1rem;
+  font-weight: bold;
+}
+.error{
+  color: rgb(236, 83, 83);
+  margin: 10px 2px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+header img{
+  width: 20vw;
+}
+
+header h3{
+
+  font-size: 1.6em;
+  margin-bottom: 10px;
+  margin-left: 2px;
+    color:ghostwhite;
+
+}
+
+
+
+main{
+
+  display:flex;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+form,header{
+
+  display:flex;
+  flex-direction: column; 
+align-items: center;
+  padding: 4rem;
+
+}
+
+form input{
+  max-width: 30vw;
+}
+
+hr{
+  background: midnightblue;
+  color: midnightblue;
+  border-radius: 5%;
+  width: 0.1rem;
+  height: 3rem;
+  margin: 1rem;
+  border-color: midnightblue;
+  
+
+}
+body i::after{
+  content: '';
+  width: 1rem;
+  height: 1rem;
+}
+
+
+
+button:hover{cursor: pointer;}
+
+
+.water{
+  width:100vw;
+  margin: 0;
+}
+
+.logo-nav{
+  background-color: #222;
+  border-radius: 4%;
+  box-shadow: 0.2rem 0.3rem 15px 0.5rem rgb(52, 2, 54);
+}
+
+.radioFrame{
+
+width: 100vw;
+height: 100vh;
+
+}
+
+@media only screen and (max-width: 700px) {
+  nav ul{
+    flex-direction: column;
+  }
+
+  hr{
+    width: 15rem;
+    height: 0.01rem;
+
+  }
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/x-icon" href="/Logo.png">
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li class="logo-nav"> <a href="/"><img src="/Logo.png" width="50" alt=""></a>
+      </li>
+      <% if (user) { %>
+        <li>Welcome, <%= user.email %>
+        </li>
+        <hr />
+
+
+
+
+        <li>Your Favorited Radio(s):
+
+
+
+          <%= locals.station1 %>
+
+            <% if (locals.station2 && !(locals.station1) ){ %>
+
+              <%= locals.station2 %>
+
+
+
+                <% } if (locals.station2 && locals.station1){ %>
+                  ,<%= locals.station2 %>
+
+
+
+
+
+             
+
+                    <% } %>
+
+                    <% if (locals.station3 && !(locals.station1) && !(locals.station2)){ %>
+                      <%= locals.station3 %>
+                      <% } %>
+
+
+                      <% if (locals.station3 && (locals.station1) && (locals.station2)){ %>
+
+
+                       , <%= locals.station3 %>
+                        <% } %>
+
+                    
+                        <% if (locals.station3 && (locals.station1) && !(locals.station2)){ %>
+
+
+                          , <%= locals.station3 %>
+                           <% } %>
+
+
+
+                           <% if (locals.station3 && !(locals.station1) && (locals.station2)){ %>
+
+
+                            , <%= locals.station3 %>
+                             <% } %>
+   
+        </li>
+
+        <li><a href="/logout">Log out</a></li><br>
+        <li><a href="/delete" class="btn">Delete user</a></li>
+
+
+
+
+
+        <% } else { %>
+          <li><a href="/login">Log in</a></li>
+          <li><a href="/signup" class="btn">Sign up</a></li>
+
+          <% } %>
+    </ul>
+
+  </nav>
