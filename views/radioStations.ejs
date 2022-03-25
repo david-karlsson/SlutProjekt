@@ -1,7 +1,7 @@
 <%- include('partials/header'); -%>
 
   <main>
-    <iframe class="radioFrame" src="http://localhost:5500" ></iframe>
+    <iframe class="radioFrame" src="https://stupefied-ardinghelli-1093f0.netlify.app/" ></iframe>
 
     <!-- <button><a href="http://localhost:8080/">radios</a></button> -->
     <ul>
@@ -19,7 +19,7 @@
         <option value="3"> <%= locals.stationName2 %>  </option>
 
       </select>
-      <button name=>Add  to favorites</button>
+      <button >Add  to favorites</button>
 
     </form>
   </main>
@@ -76,12 +76,12 @@ console.log('Page Loaded');
 
 
           const Id = form.radioPicker.value;
-          const subscribedUser = 'test@test.se';
+          const FavUser = 'test@test.se';
 
 
           const res = await fetch('/favorite', {
             method: 'POST',
-            body: JSON.stringify({ Id, subscribedUser }),
+            body: JSON.stringify({ Id, FavUser }),
             headers: { 'Content-Type': 'application/json' }
           });
           //   const data = await res.json();

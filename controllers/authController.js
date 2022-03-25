@@ -1,6 +1,7 @@
 const User = require("../models/User");
 const jwt = require('jsonwebtoken');
 const StreamPost = require("../models/StreamPost")
+require('dotenv').config()
 
 // handle errors
 const handleErrors = (err) => {

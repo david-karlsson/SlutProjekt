@@ -24,7 +24,7 @@ const app = express();
 const cors = require("cors");
 
 var corsOptions = {
-  origin: "http://localhost:8080"
+  origin: "https://stupefied-ardinghelli-1093f0.netlify.app/"
 };
 
 
