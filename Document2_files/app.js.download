@@ -1,0 +1,58 @@
+
+
+const app = Vue.createApp({
+
+
+
+data(){
+return{
+  
+
+}
+
+
+},
+
+
+
+
+
+
+methods:{
+
+
+
+
+
+
+}
+
+
+});
+
+// const Radio = app.component('Radio')
+// app.use(LocalePlugin)
+
+
+
+
+
+app.component('Radio',{
+
+  template: `
+  <h1>Radio-station Selection </h1>`
+     
+  } ) 
+
+
+
+
+
+
+
+
+
+// app.mount('#app')
+
+
+export default app;

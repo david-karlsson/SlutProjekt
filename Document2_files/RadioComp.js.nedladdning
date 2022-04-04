@@ -1,0 +1,253 @@
+// const app = Vue.createApp({})
+import app  from "./app.js";
+var n;
+app.component('Radio2',{
+//  n = channels.length,
+template: `
+<div>
+
+
+
+<div v-if="langSwitch == 0">
+{{GetLanguages()}}
+</div>
+
+
+<section>
+
+
+
+<button @click="ChannelGet()">Music, please</button>
+
+<div class="ui-segment">
+<input type="text"  v-model="searchQuery" id="search-bar">
+<button @click="ChannelSearch()">Search</button>
+
+</div>
+<span class="ui-segment">
+<label for="lang">Languages:</label>
+
+<select @Change = LangSearch() name="lang" class="lang-box" v-model="currentLanguage">
+
+<option   v-for="item in languages " class="item-style"  :key=item>
+
+
+
+{{item.name}}
+||   Stations:
+{{item.stationcount}}
+</option>
+</select>
+
+</span>
+
+
+</section>
+
+<main>
+
+<span class="box ui-segment" >
+<p v-for="item in channels " class="item-style" :key = item >
+<a :href= item.homepage >
+<img v-if = "item.favicon !== ''"  :src = item.favicon  />
+</a>
+<audio controls>
+
+<source :src=item.url type="audio/ogg">
+<source src=item.url type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+
+<a :href= item.homepage >
+
+<p>{{item.name}}</p>
+<p>  <small><em>{{item.country}}</em>  </small></p>
+
+</a>
+
+</p>
+
+
+
+
+
+</span>
+
+</main>
+
+</div>
+
+
+
+`,
+
+
+
+
+
+
+// {{ channels.map(name=>{
+//   <p class="item-style" >
+// name
+// </p>
+// })}}
+
+data(){
+
+return{
+
+    channels:[],
+    searchQuery:'Eng',
+    languages:[],
+    langSwitch:0,
+    currentLanguage:''
+
+}
+
+
+}
+,
+   
+methods:{
+ChannelGet(){
+
+
+var options = {
+  method: 'GET',
+  url: 'https://radio-browser.p.rapidapi.com/json/stations',
+  params: {reverse: 'false', offset: '0', limit: '10', hidebroken: 'false'},
+  headers: {
+    'x-rapidapi-host': 'radio-browser.p.rapidapi.com',
+    'x-rapidapi-key': 'ad3c92741dmshe1e30f51eb1488dp1b285djsn2780563b1f51'
+  }
+};
+var This= this;
+axios.request(options).then(function (response) {
+	console.log(response.data);
+
+  response.data.forEach(element => {
+    This.channels.unshift(element)
+
+    console.log(element.name)
+});
+    // This.channels =response.data.name
+
+}).catch(function (error) {
+	console.error(error);
+});
+
+
+
+},
+
+
+
+ChannelSearch(){
+
+  var SearchBarQuery = document.getElementById("search-bar").value
+
+  var options = {
+    method: 'GET',
+    url: 'https://radio-browser.p.rapidapi.com/json/stations/byname/'+ SearchBarQuery,
+    params: {reverse: 'false', offset: '0', limit: '100000', hidebroken: 'false'},
+    headers: {
+      'x-rapidapi-host': 'radio-browser.p.rapidapi.com',
+      'x-rapidapi-key': 'ad3c92741dmshe1e30f51eb1488dp1b285djsn2780563b1f51'
+    }
+  };
+  var This= this;
+  axios.request(options).then(function (response) {
+    This.searchQuery = 
+    console.log(response.data);
+    response.data.forEach(element => {
+      This.channels.unshift(element)
+  
+      console.log(element.name)
+  });
+  }).catch(function (error) {
+    console.error(error);
+  });
+
+
+
+},
+
+
+GetLanguages(){
+
+  
+var options = {
+  method: 'GET',
+  url: 'https://radio-browser.p.rapidapi.com/json/languages',
+  headers: {
+    'x-rapidapi-host': 'radio-browser.p.rapidapi.com',
+    'x-rapidapi-key': 'ad3c92741dmshe1e30f51eb1488dp1b285djsn2780563b1f51'
+  }
+};
+var This= this;
+
+axios.request(options).then(function (response) {
+  response.data.forEach(element => {
+    This.languages.push(element)
+
+    // console.log(element.name)
+});
+}).catch(function (error) {
+	console.error(error);
+});
+
+this.langSwitch = 1
+
+
+},
+
+LangSearch(){
+var selectBar = document.getElementsByName("lang")[0].value.slice(0,3)
+  console.log(selectBar)
+
+
+  var options = {
+    method: 'GET',
+    url: 'https://radio-browser.p.rapidapi.com/json/stations/search' ,
+    params: {
+      language: selectBar,
+      reverse: 'false',
+      offset: '0',
+      limit: '100000',
+      hidebroken: 'false'
+    },
+    headers: {
+      'x-rapidapi-host': 'radio-browser.p.rapidapi.com',
+      'x-rapidapi-key': 'ad3c92741dmshe1e30f51eb1488dp1b285djsn2780563b1f51'
+    }
+  };
+  var This =this
+  axios.request(options).then(function (response) {
+    response.data.forEach(element => {
+      This.channels.unshift(element)
+  
+      console.log(element.name)
+  });
+  }).catch(function (error) {
+    console.error(error);
+  });
+
+
+
+}
+
+
+}
+
+
+
+
+}
+
+
+)
+
+
+
+app.mount('#RadioComp')

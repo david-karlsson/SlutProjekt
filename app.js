@@ -5,6 +5,8 @@ const radioRoutes = require('./routes/radioRoutes');
 // const css = require('./public/style.css')
 const cookieParser = require('cookie-parser');
 const {  checkUser } = require('./middleware/authMiddleware');
+// const {  apiFetch } = require('./middleware/apiGetter');
+
 require('dotenv').config()
 const app = express();
 
@@ -24,7 +26,6 @@ const app = express();
 const cors = require("cors");
 
 var corsOptions = {
-  origin: "https://stupefied-ardinghelli-1093f0.netlify.app/"
 };
 
 

@@ -47,6 +47,21 @@ nav li a{
   letter-spacing: 2px;
   color: ghostwhite;
 }
+body .stream{
+  background-color: honeydew;
+  padding: 2rem;
+  color: #17002a;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 10vh;
+  margin: 4rem;
+}
+.stream q{
+  color: gray;
+  margin: 1rem;
+  font-style: italic;
+}
 
 
 
@@ -170,23 +185,13 @@ body i::after{
 
 
 
-#radio-api-section{
-  color: antiquewhite;
-}
-
-#radio-api-section p{
-
-display: flex;
-flex-direction: column;
-padding: 1rem;
-
-
-}
-
-
 button:hover{cursor: pointer;}
 
 
+.water{
+  width:100vw;
+  margin: 0;
+}
 
 .logo-nav{
   background-color: #222;

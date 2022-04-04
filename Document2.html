@@ -1,51 +1,115 @@
-<%- include('partials/header'); -%>
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://localhost:3000/radioStations -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./Document2_files/styles.css">
+  <link rel="icon" type="image/x-icon" href="./Document2_files/Logo.png">
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li class="logo-nav"> <a href="http://localhost:3000/"><img src="./Document2_files/Logo.png" width="50" alt=""></a>
+      </li>
+      
+        <li>Welcome, david.e.karlsson@telia.com
+        </li>
+        <hr>
+
+
+
+
+        <li>Your Favorited Radio(s):
+
+          0
+<p>
+          
+  <a href="http://localhost:3000/radioStations">  	Newstalk ZB Auckland</a>
+ 
+
+            
+          </p>
+
+          
+            
+                  ,	Polskie Radio Bialystok
 
 
 
 
 
-  <main id ="radio-api-section">
+             
+
+                    
+
+                    
+
+
+                      
+
+
+                       , 
+Rete Toscana Classica
+                        
+
+                    
+                        
+
+
+
+                           
+
+
+
+                        
+                             
+                             
+                             
+
+                             
+                           
+
+
+        </li>
+
+        <li><a href="http://localhost:3000/logout">Log out</a></li><br>
+        <li><a href="http://localhost:3000/delete" class="btn">Delete user</a></li>
+
+
+
+
+
+        
+    </ul>
+
+  </nav>
+
+
+
+
+  <main id="radio-api-section">
 
     <h3>Favourites</h3>
 <p>
-  <%= locals.station1 %>
-
-
-  <audio controls  class="audio-elem" >
+  	Newstalk ZB Auckland
   
-    <source src= <%= locals.station1URL %> type="audio/ogg">
-    <source src= <%= locals.station1URL %> type="audio/mpeg">
+  <audio controls="" class="audio-elem">
+  
+    <source src="type=&quot;audio/ogg&quot;">
+    <source src="type=&quot;audio/mpeg&quot;">
     Your browser does not support the audio element.
     </audio>
   </p>
 
 
-  <p>
-    <%= locals.station2 %>
+
   
-  
-    <audio controls  class="audio-elem" >
-    
-      <source src= <%= locals.station2URL %> type="audio/ogg">
-      <source src= <%= locals.station2URL %> type="audio/mpeg">
-      Your browser does not support the audio element.
-      </audio>
-    </p>
-  
-    <p>
-      <%= locals.station3 %>
-    
-    
-      <audio controls  class="audio-elem" >
-      
-        <source src= <%= locals.station3URL %> type="audio/ogg">
-        <source src= <%= locals.station3URL %> type="audio/mpeg">
-        Your browser does not support the audio element.
-        </audio>
-      </p>
+
 
         
-    <iframe class="radioFrame" src="https://stupefied-ardinghelli-1093f0.netlify.app/" ></iframe>
+    <iframe class="radioFrame" src="./Document2_files/saved_resource.html"></iframe>
 
     <!-- <button><a href="http://localhost:8080/">radios</a></button> -->
     <ul>
@@ -55,61 +119,27 @@
 
 
 
-    <form action="/favorite" >
+    <form action="http://localhost:3000/favorite">
 
       <select name="radioPicker">
 
-        <% for(var i=0; i< locals.stationsData; i++) { %>
-          <option value=  <%= [i] %> >
-              <%= locals.stationsData[i].name %>
-          </option>
-
-
-      <% } %>
+        
 
 
   
-      <option value="1">
-        <%= locals.stationsData[0].name %>
-  
-      </option>
-      <option value="2">
-        <%= locals.stationsData[1].name %>
-  
-      </option>
-      <option value="3">
-        <%= locals.stationsData[2].name %>
-  
-      </option>
-      <option value="4">
-        <%= locals.stationsData[3].name %>
-  
-      </option>
-      <option value="5">
-        <%= locals.stationsData[4].name %>
-  
-      </option>
-      <option value="6">
-        <%= locals.stationsData[5].name %>
-  
-      </option>
-      <option value="7">
-        <%= locals.stationsData[6].name %>
-  
-      </option>
 
       </select>
 
-<input type="text" id="SearchBar" >
+<input type="text" id="SearchBar">
 
-      <button >Add  to favorites</button>
-      <%= locals.stSearch %>   
-    
-    
-    </form>
+      <button>Add  to favorites</button>
+           </form>
       
-  </main>
-  <%- include('partials/footer'); -%>
+  </ul></main>
+  <footer></footer>
+
+
+
 
     <script>
 
@@ -248,4 +278,4 @@ const form = document.querySelector('form');
         }
 
       })
-    </script>
+    </script><script type="text/javascript" src="chrome-extension://aalppolilappfakpmdfdkpppdnhpgifn/installHook.js"></script></body></html>

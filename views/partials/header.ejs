@@ -25,18 +25,25 @@
 
         <li>Your Favorited Radio(s):
 
+        
+<p>
+          
+  <a href=  <%=locals.station1URL%> >  <%= locals.station1 %></a>
+ 
 
+            
+          </p>
 
-          <%= locals.station1 %>
-
+          
             <% if (locals.station2 && !(locals.station1) ){ %>
 
-              <%= locals.station2 %>
-
+              <a href=  <%=locals.station2URL%> >  <%= locals.station2 %></a>
+ 
 
 
                 <% } if (locals.station2 && locals.station1){ %>
-                  ,<%= locals.station2 %>
+                  ,              <a href=  <%=locals.station2URL%> >  <%= locals.station2 %></a>
+
 
 
 
@@ -71,7 +78,18 @@
 
                             , <%= locals.station3 %>
                              <% } %>
-   
+
+
+
+                        
+                             <%= locals.station4 %>
+                             
+                             <%= locals.station5 %>
+
+                             <%= locals.station6 %>
+                           
+
+
         </li>
 
         <li><a href="/logout">Log out</a></li><br>

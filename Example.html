@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://localhost:3000/radioStations -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./Example_files/styles.css">
+  <link rel="icon" type="image/x-icon" href="./Example_files/Logo.png">
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li class="logo-nav"> <a href="http://localhost:3000/"><img src="./Example_files/Logo.png" width="50" alt=""></a>
+      </li>
+      
+        <li>Welcome, test@fest.se
+        </li>
+        <hr>
+
+
+
+
+        <li>Your Favorited Radio(s):
+
+
+
+          	Newstalk ZB Auckland
+
+            
+                  ,	Polskie Radio Bialystok
+
+
+
+
+
+             
+
+                    
+
+                    
+
+
+                      
+
+
+                       , 
+Rete Toscana Classica
+                        
+
+                    
+                        
+
+
+
+                           
+   
+        </li>
+
+        <li><a href="http://localhost:3000/logout">Log out</a></li><br>
+        <li><a href="http://localhost:3000/delete" class="btn">Delete user</a></li>
+
+
+
+
+
+        
+    </ul>
+
+  </nav>
+  <main>
+    <iframe class="radioFrame" src="./Example_files/saved_resource.html"></iframe>
+
+    <!-- <button><a href="http://localhost:8080/">radios</a></button> -->
+    <ul>
+    
+
+<h3>Favourites</h3>
+
+
+
+    <form action="http://localhost:3000/favorite">
+
+      <select name="radioPicker">
+        <option value="1"> 	Newstalk ZB Auckland </option>
+        <option value="2"> 	Polskie Radio Bialystok  </option>
+        <option value="3"> 
+Rete Toscana Classica  </option>
+
+      </select>
+
+<input type="text" id="SearchBar">
+
+      <button>Add  to favorites</button>
+           </form>
+  </ul></main>
+  <footer></footer>
+
+
+
+
+    <script>
+
+
+
+
+
+
+
+// window.onload = async (event) =>{
+  
+//   var dropDown = document.querySelector("radioPicker")
+
+
+
+//   var options = {
+//     method: 'GET',
+
+//     params: {reverse: 'false', offset: '0', limit: '10', hidebroken: 'false'},
+//     headers: {
+//       'x-rapidapi-host': 'radio-browser.p.rapidapi.com',
+//       'x-rapidapi-key': 'ad3c92741dmshe1e30f51eb1488dp1b285djsn2780563b1f51'
+//     }}
+// const data = await fetch("https://radio-browser.p.rapidapi.com/json/stations", options);
+          
+// console.log(data.json())
+
+// // const statData = data.json()
+
+
+// // statData.forEach(element => {
+// //    var opt = document.createElement("option")
+// // opt.value = element.name
+// // dropDown.appendChild(opt)
+
+// //   });
+// console.log('Page Loaded');
+
+// };
+
+
+SearchBar.addEventListener('keyDown', async (e) => {
+        e.preventDefault();
+
+const res = await fetch('/radioStation', {
+            method: 'POST',
+            body: JSON.stringify({ Search }),
+            headers: { 'Content-Type': 'application/json' }
+          });
+
+
+});
+
+        
+      const form = document.querySelector('form');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        try {
+
+          const Search = form.SearchBar.value;
+          const Id = form.radioPicker.value;
+          // const FavUser = 'test@test.se';
+
+
+          const res = await fetch('/favorite', {
+            method: 'POST',
+            body: JSON.stringify({ Id}),
+            headers: { 'Content-Type': 'application/json' }
+          });
+          //   const data = await res.json();
+
+          
+
+          console.log(data);
+          if (data.errors) {
+            console.log(data.errors);
+          }
+          if (data) {
+            location.assign('/');
+          }
+
+        }
+        catch (err) {
+          console.log(err);
+        }
+
+      })
+    </script></body></html>
